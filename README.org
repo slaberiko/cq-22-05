@@ -24,11 +24,11 @@
 * 実験手順
   - 1)グラフを生成する
     - generate_graph 内
-      - ./generate_exp1_pex.sh {alpha} {data}
+      - $ ./generate_exp1_pex.sh {alpha} {data}
 	- 実験1：p_{ex} の大きさを変える
-      - ./generate_exp2_nc.sh {alpha} {data}
+      - $ ./generate_exp2_nc.sh {alpha} {data}
  	- 実験2：n_c の大きさを変える
-      - generate_exp3_pex_0.sh {alpha} {data}
+      - $ ./generate_exp3_pex_0.sh {alpha} {data}
 	- 実験3：p_{ex} を 0 にすることでクラスタ間を非連結にする
   - 2)固有値を計算する
     - calc_eig 内
