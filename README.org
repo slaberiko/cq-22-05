@@ -22,65 +22,52 @@
       - 5月CQ実験プログラム説明
 
 * 実験手順
+  - 注意：引数に関しては次の項に書いてあります
+  - プロットのプログラムに関しては xdoplot と psfix-fig が必要です
   - 1)グラフを生成する
     - generate_graph 内
-      - $ ./generate_exp1_pex.sh {alpha} {data}
-	- 実験1：p_{ex} の大きさを変える
-      - $ ./generate_exp2_nc.sh {alpha} {data}
- 	- 実験2：n_c の大きさを変える
-      - $ ./generate_exp3_pex_0.sh {alpha} {data}
-	- 実験3：p_{ex} を 0 にすることでクラスタ間を非連結にする
+      - ./compute_eig.sh {dir_name} {graph_file_name}
+
   - 2)固有値を計算する
     - calc_eig 内
       - ./compute_eig.sh {dir_name} {graph_file_name}
-	- 実験1
-	  - {dir_name}：SB_change_pex_0.01_alpha_1.0
-	  - {graph_file_name}：change_0.002_0.25_1.0
-	- 実験2
-	  - {dir_name}：SB_change_nc_10_alpha_1.0
-	  - {graph_file_name}：change_0.002_0.25_1.0
-	- 実験3
-	  - {dir_name}：SB_exp3_pex_0.002_alpha_1.0
-	  - {graph_file_name}：SB_0.25_1.0_1
+
   - 3)LAD を行う
     - calc_ap_1_v1
-      - ./experiment_exp1_2.sh {dir_name}
-	- 実験1
-	  - {dir_name}：SB_change_pex_0.01_alpha_1.0
-	- 実験2
-	  - {dir_name}：SB_change_nc_10_alpha_1.0
-      - ./experiment_exp3.sh {dir_name}
-	- 実験3
-	  - {dir_name}：SB_exp3_pex_0.002_alpha_1.0
+      - 実験 1, 2 の場合
+	- ./experiment_exp1_2.sh {dir_name}
+      - 実験 3 の場合
+	- ./experiment_exp3.sh {dir_name}
+
   - 4)固有値を時系列に並べ替え
     - plot_lambda 内
-      - ./lambda_exp1_2.sh {dir_name}
-	- 実験1
-	  - {dir_name}：SB_change_pex_0.01_alpha_1.0
-	- 実験2
-	  - {dir_name}：SB_change_nc_10_alpha_1.0
-      - ./lambda_exp3.sh
-	- 実験3
-	  - {dir_name}：SB_exp3_pex_0.002_alpha_1.0
+      - 実験 1, 2 の場合
+	- ./lambda_exp1_2.sh {dir_name}
+      - 実験 3 の場合
+	- ./lambda_exp3.sh {dir_name}
+	    
   - 5)固有値をプロット
     - plot_lambda 内
-      - ./plot_lam_exp1_2.sh {dir_name}
-	- 実験1
-	  - {dir_name}：SB_change_pex_0.01_alpha_1.0
-	- 実験2
-	  - {dir_name}：SB_change_nc_10_alpha_1.0
-      - ./plot_lam_exp3.sh
-	- 実験3
-	  - {dir_name}：SB_exp3_pex_0.002_alpha_1.0
+      - 実験1, 2 の場合
+	- ./plot_lam_exp1_2.sh {dir_name}
+      - 実験3の場合
+	- ./plot_lam_exp3.sh {dir_name}
+
     - 6)sigma_t(k) を時系列に並べ替え
       - ./sigma.sh {dir_name}
-	- 実験1
-	  - {dir_name}：SB_change_pex_0.01_alpha_1.0
-	- 実験2
-	  - {dir_name}：SB_change_nc_10_alpha_1.0
-	- 実験3
-	  - {dir_name}：SB_exp3_pex_0.002_alpha_1.0
+
     - 7)sigma_t(k) をプロット
       - ./plot_sigma_exp1_pex.sh
       - ./plot_sigma_exp2_nc.sh
       - ./plot_sigma_exp3_pex_0.sh sigma.sh
+
+* 注意：引数について
+  - 実験1の場合
+    - {dir_name}：SB_change_pex_0.01_alpha_1.0
+    - {graph_file_name}：change_0.002_0.25_1.0
+  - 実験2の場合
+    - {dir_name}：SB_change_nc_10_alpha_1.0
+    - {graph_file_name}：change_0.002_0.25_1.0
+  - 実験3の場合
+    - {dir_name}：SB_exp3_pex_0.002_alpha_1.0
+    - {graph_file_name}：SB_0.25_1.0_1
