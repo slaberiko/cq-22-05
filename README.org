@@ -22,44 +22,47 @@
       - 5月CQ実験プログラム説明
 
 * 実験手順
-  - 注意：引数に関しては次の項に書いてあります
-  - プロットのプログラムに関しては xdoplot と psfix-fig が必要です
-  - 1)グラフを生成する
-    - generate_graph 内
-      - ./compute_eig.sh {dir_name} {graph_file_name}
+** 注意
+   - 引数に関しては次の項に書いてあります
+   - プロットのプログラムに関しては xdoplot と psfix-fig が必要です
+** 1)グラフを生成する
+   - generate_graph 内
+     - ./compute_eig.sh {dir_name} {graph_file_name}
 
-  - 2)固有値を計算する
-    - calc_eig 内
-      - ./compute_eig.sh {dir_name} {graph_file_name}
+** 2)固有値を計算する
+   - calc_eig 内
+     - ./compute_eig.sh {dir_name} {graph_file_name}
 
-  - 3)LAD を行う
-    - calc_ap_1_v1
-      - 実験 1, 2 の場合
-	- ./experiment_exp1_2.sh {dir_name}
-      - 実験 3 の場合
-	- ./experiment_exp3.sh {dir_name}
+** 3)LAD を行う
+   - calc_ap_1_v1
+     - 実験 1, 2 の場合
+       - ./experiment_exp1_2.sh {dir_name}
+     - 実験 3 の場合
+       - ./experiment_exp3.sh {dir_name}
 
-  - 4)固有値を時系列に並べ替え
-    - plot_lambda 内
-      - 実験 1, 2 の場合
-	- ./lambda_exp1_2.sh {dir_name}
-      - 実験 3 の場合
-	- ./lambda_exp3.sh {dir_name}
-	    
-  - 5)固有値をプロット
-    - plot_lambda 内
-      - 実験1, 2 の場合
-	- ./plot_lam_exp1_2.sh {dir_name}
-      - 実験3の場合
-	- ./plot_lam_exp3.sh {dir_name}
+** 4)固有値を時系列に並べ替え
+   - plot_lambda 内
+     - 実験 1, 2 の場合
+       - ./lambda_exp1_2.sh {dir_name}
+     - 実験 3 の場合
+       - ./lambda_exp3.sh {dir_name}
+    
+** 5)固有値をプロット
+   - plot_lambda 内
+     - 実験1, 2 の場合
+       - ./plot_lam_exp1_2.sh {dir_name}
+     - 実験3の場合
+       - ./plot_lam_exp3.sh {dir_name}
 
-    - 6)sigma_t(k) を時系列に並べ替え
-      - ./sigma.sh {dir_name}
+** 6)sigma_t(k) を時系列に並べ替え
+   - plot_sigma 内
+     - ./sigma.sh {dir_name}
 
-    - 7)sigma_t(k) をプロット
-      - ./plot_sigma_exp1_pex.sh
-      - ./plot_sigma_exp2_nc.sh
-      - ./plot_sigma_exp3_pex_0.sh sigma.sh
+** 7)sigma_t(k) をプロット
+   - plot_sigma 内
+     - ./plot_sigma_exp1_pex.sh
+     - ./plot_sigma_exp2_nc.sh
+     - ./plot_sigma_exp3_pex_0.sh sigma.sh
 
 * 注意：引数について
   - 実験1の場合
