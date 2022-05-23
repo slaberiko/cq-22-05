@@ -26,10 +26,12 @@
    - 引数に関しては次の項に書いてあります
    - プロットのプログラムに関しては xdoplot と psfix-fig が必要です
 ** 1)グラフを生成する
+   - 再現実験をする際には飛ばしても OK です
    - generate_graph 内
      - ./compute_eig.sh {dir_name} {graph_file_name}
 
 ** 2)固有値を計算する
+   - 再現実験をする際には飛ばしても OK です
    - calc_eig 内
      - ./compute_eig.sh {dir_name} {graph_file_name}
 
