@@ -46,6 +46,7 @@
    - plot_lambda 内
      - 実験 1, 2 の場合
        - ./lambda_exp1_2.sh {dir_name}
+       - {dir_name}/datasets/lambda/{data}/plot/
      - 実験 3 の場合
        - ./lambda_exp3.sh {dir_name}
     
